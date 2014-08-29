@@ -1,25 +1,27 @@
 {% extends "base.html" %}
+{% load staticfiles %}
+{% load compressed %}
 {% block content %}
-<table class="table table-condensed">
-  <thead>
-    <tr>
-      <th>Expense</th>
-      <th>Category</th>
-      <th>Price</th>
-      <th>Amount</th>
-      <th>Total</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for expense in all_expenses %}
-    <tr>
-      <td>{{ expense.name }}</td>
-      <td>{{ expense.category.name }}</td>
-      <td>{{ expense.price }}</td>
-      <td>{{ expense.amount }}</td>
-      <td><strong>{{ expense.get_sum }}</strong></td>
-  </tr>
-  {% endfor %}
-  </tbody>
-</table>
+{% load l10n %}
+{% compressed_css 'table' %}
+<section id="cd-table">
+
+    <div class="cd-table-container">
+        <div class="cd-table-wrapper">
+
+            {% for expense in all_expenses %}
+            <div class="cd-table-column">
+                <h2>{{ expense.paid|date:"Y-m-d (l)"|localize }}</h2>
+                <ul>
+                    <li>{{ expense.beauty_string }}</li>
+                </ul>
+            </div>
+            {% endfor %}
+
+
+        </div> <!-- cd-table-wrapper -->
+    </div> <!-- cd-table-container -->
+
+    <em class="cd-scroll-right"></em>
+</section>
 {% endblock %}

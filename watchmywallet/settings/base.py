@@ -265,6 +265,12 @@ PIPELINE_CSS = {
         ),
         'output_filename': 'css/style.min.css',
     },
+    'table': {
+        'source_filenames': (
+            'css/table.css',
+        ),
+        'output_filename': 'css/table.min.css',
+    },
 }
 PIPELINE_JS = {
     'modernizr': {

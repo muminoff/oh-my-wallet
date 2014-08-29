@@ -52,5 +52,14 @@ class Expense(models.Model):
     def get_sum(self):
         return self.price * self.amount
 
+    @property
+    def beauty_string(self):
+        return u'{0} x {1} = {2} ({3})'.format(
+            self.amount,
+            self.price,
+            self.get_sum,
+            self.name
+        )
+
     def __unicode__(self):
         return u'{0}'.format(self.name)
