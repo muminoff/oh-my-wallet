@@ -90,7 +90,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 ########## DJANGO-PIPELINE
 PIPELINE_CSS = {
-    'vendor': {
+    'bootstrap': {
         'source_filenames': (
             'css/bootstrap.min.css',
         ),
@@ -104,12 +104,17 @@ PIPELINE_CSS = {
     },
 }
 PIPELINE_JS = {
-    'vendor': {
+    'jquery': {
         'source_filenames': (
             'js/jquery.min.js',
+        ),
+        'output_filename': 'css/jquery.min.js',
+    },
+    'bootstrap': {
+        'source_filenames': (
             'js/bootstrap.min.js',
         ),
-        'output_filename': 'css/vendor.min.js',
+        'output_filename': 'css/bootstrap.min.js',
     },
     'watchmywallet': {
         'source_filenames': (
