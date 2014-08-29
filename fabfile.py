@@ -20,7 +20,9 @@ def deploy():
     server()
     _title(' --- DEPLOYING PROJECT --- ')
     push()
+    pull()
     restart()
+    _title(' --- DEPLOY FINISHED --- ')
 
 def push():
     _notice(' [*] Pushing changes to Github')
