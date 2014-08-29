@@ -80,26 +80,61 @@ SECRET_KEY = get_env_setting('SECRET_KEY')
 ########## END SECRET CONFIGURATION
 
 INSTALLED_APPS += (
-    # 'djangosecure',
+    'pipeline',
     'core',
 )
 
 ########## MIDDLEWARE CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#middleware-classes
 MIDDLEWARE_CLASSES += (
-    # 'djangosecure.middleware.SecurityMiddleware',
 )
 ########## END MIDDLEWARE CONFIGURATION
 
 ########## SSL CONFIGURATION
-# SSL I LOVE YOU
-# SECURE_SSL_REDIRECT = True
-# SECURE_HSTS_SECONDS = 10
-# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-# SECURE_FRAME_DENY = True
-# SECURE_CONTENT_TYPE_NOSNIFF = True
-# SECURE_BROWSER_XSS_FILTER = True
-# SESSION_COOKIE_SECURE = True
-# SESSION_COOKIE_HTTPONLY = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ########## END SSL CONFIGURATION
+
+########## DJANGO-PIPELINE
+STATIC_FILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+PIPELINE_CSS = {
+    'bootstrap': {
+        'source_filenames': (
+            'assets/css/bootstrap.min.css',
+        ),
+        'output_filename': 'assets/css/bootstrap.min.css',
+    },
+    'watchmywallet': {
+        'source_filenames': (
+            'assets/css/watchmywallet.css',
+        ),
+        'output_filename': 'assets/css/watchmywallet.min.css',
+    },
+}
+PIPELINE_JS = {
+    'vendor': {
+        'source_filenames': (
+            'assets/js/jquery.min.js',
+            'assets/js/bootstrap.min.js',
+        ),
+        'output_filename': 'assets/css/vendor.min.js',
+    },
+    'watchmywallet': {
+        'source_filenames': (
+            'assets/js/watchmywallet.js',
+        ),
+        'output_filename': 'assets/css/watchmywallet.min.js',
+    },
+}
+MIDDLEWARE_CLASSES += (
+    'django.middleware.gzip.GZipMiddleware',
+    'pipeline.middleware.MinifyHTMLMiddleware',
+)
+PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
+STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'pipeline.finders.PipelineFinder',
+)
+PIPELINE_ENABLED = True
+########## END PIPELINE CONFIGURATION
