@@ -33,7 +33,6 @@ def pull():
 def restart():
     _notice(' [*] Restarting app')
     run_no_output(env.python_path + 'supervisorctl -c ' + env.project_path + 'watchmywallet/settings/super.conf restart watchmywallet')
-    run_no_output(env.python_path + 'supervisorctl -c ' + env.project_path + 'watchmywallet/settings/super.conf restart watchmywallet')
 
 def run_no_output(s):
     with hide('running', 'stdout'):
