@@ -31,7 +31,7 @@ def push():
 def pull():
     _notice(' [*] Pulling changes from Github')
     with cd(env.project_path):
-        run_no_output('git pull origin master')
+        run_no_output('git pull origin develop')
 
 
 def restart():
