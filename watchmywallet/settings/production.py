@@ -128,7 +128,7 @@ STATICFILES_FINDERS += (
     'pipeline.finders.FileSystemFinder',
     'pipeline.finders.AppDirectoriesFinder',
     'pipeline.finders.PipelineFinder',
-    'pipeline.finders.CachedFileFinder',
+    # 'pipeline.finders.CachedFileFinder',
 )
 STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 PIPELINE_ENABLED = True
