@@ -90,34 +90,34 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 ########## DJANGO-PIPELINE
 PIPELINE_CSS = {
-    'bootstrap': {
+    'vendor': {
         'source_filenames': (
             'assets/css/bootstrap.min.css',
         ),
         'output_filename': 'assets/css/bootstrap.min.css',
     },
-    # 'watchmywallet': {
-    #     'source_filenames': (
-    #         'assets/css/watchmywallet.css',
-    #     ),
-    #     'output_filename': 'assets/css/watchmywallet.min.css',
-    # },
+    'watchmywallet': {
+        'source_filenames': (
+            'assets/css/watchmywallet.css',
+        ),
+        'output_filename': 'assets/css/watchmywallet.min.css',
+    },
 }
-# PIPELINE_JS = {
-#     'vendor': {
-#         'source_filenames': (
-#             'assets/js/jquery.min.js',
-#             'assets/js/bootstrap.min.js',
-#         ),
-#         'output_filename': 'assets/css/vendor.min.js',
-#     },
-#     'watchmywallet': {
-#         'source_filenames': (
-#             'assets/js/watchmywallet.js',
-#         ),
-#         'output_filename': 'assets/css/watchmywallet.min.js',
-#     },
-# }
+PIPELINE_JS = {
+    'vendor': {
+        'source_filenames': (
+            'assets/js/jquery.min.js',
+            'assets/js/bootstrap.min.js',
+        ),
+        'output_filename': 'assets/css/vendor.min.js',
+    },
+    'watchmywallet': {
+        'source_filenames': (
+            'assets/js/watchmywallet.js',
+        ),
+        'output_filename': 'assets/css/watchmywallet.min.js',
+    },
+}
 MIDDLEWARE_CLASSES += (
     'django.middleware.gzip.GZipMiddleware',
     'pipeline.middleware.MinifyHTMLMiddleware',

@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load compressed %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,7 +10,7 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    {% compressed_css 'vendor' %}
     <style>
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -22,7 +23,7 @@
     <![endif]-->
 
     <!-- This file store project specific CSS -->
-    <link href="{% static 'css/watchmywallet.css' %}" rel="stylesheet">
+    {% compressed_css 'watchmywallet' %}
 
     <!-- Use this to quickly test CSS changes in a template,
         then move to watchmywallet.css -->
@@ -61,11 +62,10 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="{% static 'js/jquery.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    {% compressed_js 'vendor' %}
 
     <!-- place project specific Javascript in this file -->
-    <script src="{% static 'js/watchmywallet.js' %}"></script>
+    {% compressed_js 'watchmywallet' %}
 
     {% block extra_js %}{% endblock extra_js %}
   </body>
