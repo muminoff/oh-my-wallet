@@ -54,9 +54,9 @@ SERVER_EMAIL = EMAIL_HOST_USER
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'watchmywallet',
-        'USER': 'watchmywallet',
-        'PASSWORD': 'watchmywallet',
+        'NAME': 'ohmywallet',
+        'USER': 'ohmywallet',
+        'PASSWORD': 'ohmywallet',
         'HOST': 'localhost',
         'PORT': '5432',
     }
