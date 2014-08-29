@@ -92,7 +92,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 PIPELINE_CSS = {
     'bootstrap': {
         'source_filenames': (
-            'css/bootstrap.min.css',
+            'css/bootstrap.css',
         ),
         'output_filename': 'css/bootstrap.compressed.min.css',
     },
@@ -106,13 +106,13 @@ PIPELINE_CSS = {
 PIPELINE_JS = {
     'jquery': {
         'source_filenames': (
-            'js/jquery.min.js',
+            'js/jquery.js',
         ),
         'output_filename': 'js/jquery.compressed.min.js',
     },
     'bootstrap': {
         'source_filenames': (
-            'js/bootstrap.min.js',
+            'js/bootstrap.js',
         ),
         'output_filename': 'js/bootstrap.compressed.min.js',
     },
