@@ -104,18 +104,18 @@ PIPELINE_CSS = {
     },
 }
 PIPELINE_JS = {
-    'jquery': {
-        'source_filenames': (
-            'js/jquery.min.js',
-        ),
-        'output_filename': 'js/jquery.min.compressed.js',
-    },
-    'bootstrap': {
-        'source_filenames': (
-            'js/bootstrap.min.js',
-        ),
-        'output_filename': 'js/bootstrap.compressed.min.js',
-    },
+    # 'jquery': {
+    #     'source_filenames': (
+    #         'js/jquery.min.js',
+    #     ),
+    #     'output_filename': 'js/jquery.min.compressed.js',
+    # },
+    # 'bootstrap': {
+    #     'source_filenames': (
+    #         'js/bootstrap.min.js',
+    #     ),
+    #     'output_filename': 'js/bootstrap.compressed.min.js',
+    # },
     'watchmywallet': {
         'source_filenames': (
             'js/watchmywallet.js',
@@ -133,7 +133,7 @@ STATICFILES_FINDERS += (
     'pipeline.finders.FileSystemFinder',
     'pipeline.finders.AppDirectoriesFinder',
     'pipeline.finders.PipelineFinder',
-    # 'pipeline.finders.CachedFileFinder',
+    'pipeline.finders.CachedFileFinder',
 )
 STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 PIPELINE_ENABLED = True
