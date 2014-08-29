@@ -132,4 +132,6 @@ STATICFILES_FINDERS += (
 )
 STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 PIPELINE_ENABLED = True
+STATIC_ROOT = normpath(join(SITE_ROOT, 'assets'))
+STATIC_URL = '/static/'
 ########## END PIPELINE CONFIGURATION
