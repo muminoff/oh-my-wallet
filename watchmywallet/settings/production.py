@@ -92,9 +92,9 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 PIPELINE_CSS = {
     'vendor': {
         'source_filenames': (
-            'assets/css/bootstrap.min.css',
+            'css/bootstrap.min.css',
         ),
-        'output_filename': 'assets/css/bootstrap.min.css',
+        'output_filename': 'css/bootstrap.min.css',
     },
     'watchmywallet': {
         'source_filenames': (
