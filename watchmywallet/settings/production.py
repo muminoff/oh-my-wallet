@@ -82,3 +82,5 @@ SECRET_KEY = get_env_setting('SECRET_KEY')
 INSTALLED_APPS += (
     'core',
 )
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
