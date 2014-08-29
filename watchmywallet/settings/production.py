@@ -89,7 +89,6 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ########## END SSL CONFIGURATION
 
 ########## DJANGO-PIPELINE
-STATIC_FILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 PIPELINE_CSS = {
     'bootstrap': {
         'source_filenames': (
@@ -97,12 +96,12 @@ PIPELINE_CSS = {
         ),
         'output_filename': 'assets/css/bootstrap.min.css',
     },
-    'watchmywallet': {
-        'source_filenames': (
-            'assets/css/watchmywallet.css',
-        ),
-        'output_filename': 'assets/css/watchmywallet.min.css',
-    },
+    # 'watchmywallet': {
+    #     'source_filenames': (
+    #         'assets/css/watchmywallet.css',
+    #     ),
+    #     'output_filename': 'assets/css/watchmywallet.min.css',
+    # },
 }
 # PIPELINE_JS = {
 #     'vendor': {
@@ -132,6 +131,9 @@ PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
 #     # 'pipeline.finders.CachedFileFinder',
 # )
 STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'pipeline.finders.PipelineFinder',
     'pipeline.finders.FileSystemFinder',
     'pipeline.finders.AppDirectoriesFinder',
     'pipeline.finders.PipelineFinder',
