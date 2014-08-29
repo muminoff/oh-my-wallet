@@ -80,26 +80,6 @@
 #cd-table ul > li:last-child {
   border-bottom: none;
 }
-#cd-table .cd-unchecked span, #cd-table .cd-checked span {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  background-image: url("../img/yes-no.svg");
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: 32px 16px;
-  left: 50%;
-  top: 50%;
-  bottom: auto;
-  right: auto;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -o-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
 #cd-table .cd-unchecked span {
   background-position: -16px 0;
 }
