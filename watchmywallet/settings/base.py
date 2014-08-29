@@ -244,8 +244,61 @@ WSGI_APPLICATION = '%s.wsgi.application' % SITE_NAME
 # See: http://south.readthedocs.org/en/latest/installation.html#configuring-your-django-installation
 INSTALLED_APPS += (
     # Database migration helpers:
+    'pipeline',
     'south',
 )
 # Don't need to use South when setting up a test database.
 SOUTH_TESTS_MIGRATE = False
 ########## END SOUTH CONFIGURATION
+
+########## DJANGO-PIPELINE
+PIPELINE_CSS = {
+    'reset': {
+        'source_filenames': (
+            'css/reset.css',
+        ),
+        'output_filename': 'css/reset.min.css',
+    },
+    'style': {
+        'source_filenames': (
+            'css/style.css',
+        ),
+        'output_filename': 'css/style.min.css',
+    },
+}
+PIPELINE_JS = {
+    'modernizr': {
+        'source_filenames': (
+            'js/modernizr.js',
+        ),
+        'output_filename': 'js/modernizr.min.js',
+    },
+    'jquery': {
+        'source_filenames': (
+            'js/jquery.js',
+        ),
+        'output_filename': 'js/jquery.min.js',
+    },
+    'main': {
+        'source_filenames': (
+            'js/main.js',
+        ),
+        'output_filename': 'js/main.min.js',
+    },
+}
+MIDDLEWARE_CLASSES += (
+    'django.middleware.gzip.GZipMiddleware',
+    'pipeline.middleware.MinifyHTMLMiddleware',
+)
+PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
+PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.jsmin.JSMinCompressor'
+STATICFILES_FINDERS += (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'pipeline.finders.PipelineFinder',
+    'pipeline.finders.CachedFileFinder',
+)
+STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+STATIC_ROOT = normpath(join(SITE_ROOT, 'assets'))
+STATIC_URL = '/static/'
+########## END PIPELINE CONFIGURATION

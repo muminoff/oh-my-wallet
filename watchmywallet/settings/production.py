@@ -80,63 +80,9 @@ SECRET_KEY = get_env_setting('SECRET_KEY')
 ########## END SECRET CONFIGURATION
 
 INSTALLED_APPS += (
-    'pipeline',
     'core',
 )
 
 ########## SSL CONFIGURATION
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-########## END SSL CONFIGURATION
-
-########## DJANGO-PIPELINE
-PIPELINE_CSS = {
-    'reset': {
-        'source_filenames': (
-            'css/reset.css',
-        ),
-        'output_filename': 'css/reset.min.css',
-    },
-    'style': {
-        'source_filenames': (
-            'css/style.css',
-        ),
-        'output_filename': 'css/style.min.css',
-    },
-}
-PIPELINE_JS = {
-    'modernizr': {
-        'source_filenames': (
-            'js/modernizr.js',
-        ),
-        'output_filename': 'js/modernizr.min.js',
-    },
-    'jquery': {
-        'source_filenames': (
-            'js/jquery.js',
-        ),
-        'output_filename': 'js/jquery.min.js',
-    },
-    'main': {
-        'source_filenames': (
-            'js/main.js',
-        ),
-        'output_filename': 'js/main.min.js',
-    },
-}
-MIDDLEWARE_CLASSES += (
-    'django.middleware.gzip.GZipMiddleware',
-    'pipeline.middleware.MinifyHTMLMiddleware',
-)
-PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
-PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.jsmin.JSMinCompressor'
-STATICFILES_FINDERS += (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'pipeline.finders.PipelineFinder',
-    'pipeline.finders.CachedFileFinder',
-)
-STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
-PIPELINE_ENABLED = True
-STATIC_ROOT = normpath(join(SITE_ROOT, 'assets'))
-STATIC_URL = '/static/'
-########## END PIPELINE CONFIGURATION
+########## END SSL CONFIGURATION 
