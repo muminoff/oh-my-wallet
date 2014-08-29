@@ -1,3 +1,4 @@
+{% load staticfiles %}
 {% load compressed %}
 <!doctype html>
 <html lang="en" class="no-js">
@@ -15,7 +16,7 @@
 </head>
 <body>
     <header>
-        <a id="cd-logo" href="#0"><img src="../img/cd-logo.svg" alt="Homepage"></a>
+    <a id="cd-logo" href="#0"><img src="{% static 'img/cd-logo.svg' %}" alt="Homepage"></a>
         <nav id="cd-top-nav">
             <ul>
                 <li><a href="#0">Tour</a></li>
