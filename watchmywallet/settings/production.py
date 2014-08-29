@@ -84,12 +84,6 @@ INSTALLED_APPS += (
     'core',
 )
 
-########## MIDDLEWARE CONFIGURATION
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#middleware-classes
-MIDDLEWARE_CLASSES += (
-)
-########## END MIDDLEWARE CONFIGURATION
-
 ########## SSL CONFIGURATION
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ########## END SSL CONFIGURATION
