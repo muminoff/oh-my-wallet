@@ -108,19 +108,19 @@ PIPELINE_JS = {
         'source_filenames': (
             'js/jquery.min.js',
         ),
-        'output_filename': 'css/jquery.min.js',
+        'output_filename': 'js/jquery.min.js',
     },
     'bootstrap': {
         'source_filenames': (
             'js/bootstrap.min.js',
         ),
-        'output_filename': 'css/bootstrap.min.js',
+        'output_filename': 'js/bootstrap.min.js',
     },
     'watchmywallet': {
         'source_filenames': (
             'js/watchmywallet.js',
         ),
-        'output_filename': 'css/watchmywallet.min.js',
+        'output_filename': 'js/watchmywallet.min.js',
     },
 }
 MIDDLEWARE_CLASSES += (
