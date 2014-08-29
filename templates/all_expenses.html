@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Expense</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th>Amount</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for expense in all_expenses %}
+    <tr>
+      <td>{{ expense.name }}</td>
+      <td>{{ expense.category.name }}</td>
+      <td>{{ expense.price }}</td>
+      <td>{{ expense.amount }}</td>
+      <td><strong>{{ expense.get_sum }}</strong></td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

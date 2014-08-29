@@ -8,10 +8,9 @@ from django.views.generic import TemplateView
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', TemplateView.as_view(template_name='base.html')),
 
     # Examples:
-    # url(r'^$', 'watchmywallet.views.home', name='home'),
+    url(r'^$', 'core.views.all_expenses', name='all_expenses'),
     # url(r'^watchmywallet/', include('watchmywallet.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
