@@ -30,7 +30,9 @@ def push():
 
 def pull():
     _notice(' [*] Pulling changes from Github')
-    run_no_output('git pull origin develop')
+    with cd(env.project_path):
+        run('git pull origin master')
+
 
 def restart():
     _notice(' [*] Restarting app')
