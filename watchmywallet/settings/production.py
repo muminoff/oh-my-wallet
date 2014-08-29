@@ -110,6 +110,18 @@ PIPELINE_JS = {
         ),
         'output_filename': 'js/modernizr.min.js',
     },
+    'jquery': {
+        'source_filenames': (
+            'js/jquery.js',
+        ),
+        'output_filename': 'js/jquery.min.js',
+    },
+    'main': {
+        'source_filenames': (
+            'js/main.js',
+        ),
+        'output_filename': 'js/main.min.js',
+    },
 }
 MIDDLEWARE_CLASSES += (
     'django.middleware.gzip.GZipMiddleware',
