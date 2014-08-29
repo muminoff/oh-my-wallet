@@ -3,30 +3,27 @@
   <li class="item-has-children">
   <a href="#0">Categories</a>
   <ul class="sub-menu">
-    <li><a href="#0">Brand</a></li>
-    <li><a href="#0">Web Apps</a></li>
-    <li><a href="#0">Mobile Apps</a></li>
+    {% for category in all_categories %}
+    <li><a href="#0">{{ category.name }}</a></li>
+    {% endfor %}
   </ul>
   </li>
 
   <li class="item-has-children">
-  <a href="#0">Expenses</a>
+  <a href="#0">Reports</a>
   <ul class="sub-menu">
-    <li><a href="#0">Product 1</a></li>
-    <li><a href="#0">Product 2</a></li>
-    <li><a href="#0">Product 3</a></li>
-    <li><a href="#0">Product 4</a></li>
-    <li><a href="#0">Product 5</a></li>
+    <li><a href="#0">Weekly</a></li>
+    <li><a href="#0">Monthly</a></li>
+    <li><a href="#0">Yearly</a></li>
   </ul>
   </li>
 
   <li class="item-has-children">
   <a href="#0">Shopping list</a>
   <ul class="sub-menu">
-    <li><a href="#0">London</a></li>
-    <li><a href="#0">New York</a></li>
-    <li><a href="#0">Milan</a></li>
-    <li><a href="#0">Paris</a></li>
+    <li><a href="#0">Create New</a></li>
+    <li><a href="#0">List</a></li>
+    <li><a href="#0">Archive</a></li>
   </ul>
   </li>
 </ul>
