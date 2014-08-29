@@ -1,4 +1,4 @@
-watch_my_wallet
-===============
+oh-my-wallet
+============
 
 Daily expense organizer for small families
