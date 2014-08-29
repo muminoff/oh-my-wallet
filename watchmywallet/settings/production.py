@@ -103,32 +103,32 @@ PIPELINE_CSS = {
         'output_filename': 'css/watchmywallet.compressed.min.css',
     },
 }
-PIPELINE_JS = {
-    'jquery': {
-        'source_filenames': (
-            'js/jquery.min.js',
-        ),
-        'output_filename': 'js/jquery.min.compressed.js',
-    },
-    'bootstrap': {
-        'source_filenames': (
-            'js/bootstrap.min.js',
-        ),
-        'output_filename': 'js/bootstrap.compressed.min.js',
-    },
-    'watchmywallet': {
-        'source_filenames': (
-            'js/watchmywallet.js',
-        ),
-        'output_filename': 'js/watchmywallet.compressed.min.js',
-    },
-}
+# PIPELINE_JS = {
+#     'jquery': {
+#         'source_filenames': (
+#             'js/jquery.min.js',
+#         ),
+#         'output_filename': 'js/jquery.min.compressed.js',
+#     },
+#     'bootstrap': {
+#         'source_filenames': (
+#             'js/bootstrap.min.js',
+#         ),
+#         'output_filename': 'js/bootstrap.compressed.min.js',
+#     },
+#     'watchmywallet': {
+#         'source_filenames': (
+#             'js/watchmywallet.js',
+#         ),
+#         'output_filename': 'js/watchmywallet.compressed.min.js',
+#     },
+# }
 MIDDLEWARE_CLASSES += (
     'django.middleware.gzip.GZipMiddleware',
     'pipeline.middleware.MinifyHTMLMiddleware',
 )
 PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
-PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
+# PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
 STATICFILES_FINDERS += (
     'pipeline.finders.FileSystemFinder',
     'pipeline.finders.AppDirectoriesFinder',
