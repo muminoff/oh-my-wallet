@@ -26,12 +26,13 @@ def push():
     _notice(' [*] Pushing changes to Github')
     local('git push origin develop')
 
-def push():
-    _notice(' [*] Pushing changes to Github')
-    local('git push origin develop')
+def pull():
+    _notice(' [*] Pulling changes from Github')
+    run_no_output('git pull origin develop')
 
 def restart():
-    _notice(' [*] Pulling from Github')
+    _notice(' [*] Restarting app')
+    run_no_output(env.python_path + 'supervisorctl -c ' + env.project_path + 'watchmywallet/settings/super.conf restart watchmywallet')
     run_no_output(env.python_path + 'supervisorctl -c ' + env.project_path + 'watchmywallet/settings/super.conf restart watchmywallet')
 
 def run_no_output(s):
