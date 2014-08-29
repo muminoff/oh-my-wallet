@@ -123,13 +123,13 @@ MIDDLEWARE_CLASSES += (
     'pipeline.middleware.MinifyHTMLMiddleware',
 )
 PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
-# PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
-STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
 STATICFILES_FINDERS += (
     'pipeline.finders.FileSystemFinder',
     'pipeline.finders.AppDirectoriesFinder',
     'pipeline.finders.PipelineFinder',
     'pipeline.finders.CachedFileFinder',
 )
+STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 PIPELINE_ENABLED = True
 ########## END PIPELINE CONFIGURATION
