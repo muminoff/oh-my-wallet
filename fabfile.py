@@ -8,7 +8,7 @@ def server():
     env.hosts = ['muminoff.com']
     env.user = 'sardor'
     env.python_path = '/home/sardor/python-env/bin/'
-    env.project_path ='/home/sardor/watch_my_wallet/'
+    env.project_path ='/home/sardor/oh-my-wallet/'
 
 def _title(s):
     print(blue(s, bold=True))
