@@ -271,6 +271,12 @@ PIPELINE_CSS = {
         ),
         'output_filename': 'css/table.min.css',
     },
+    'fonts': {
+        'source_filenames': (
+            'css/fonts.css',
+        ),
+        'output_filename': 'css/fonts.min.css',
+    },
 }
 PIPELINE_JS = {
     'modernizr': {

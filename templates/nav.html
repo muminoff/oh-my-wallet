@@ -1,7 +1,9 @@
+{% load compressed %}
+{% compressed_css 'fonts' %}
 <nav id="cd-lateral-nav">
 <ul class="cd-navigation">
   <li class="item-has-children">
-  <a href="#0">Categories</a>
+  <a href="#0"><span class="icon-layers"></span> Categories</a>
   <ul class="sub-menu">
     {% for category in all_categories %}
     <li><a href="#0">{{ category.name }}</a></li>
@@ -10,7 +12,7 @@
   </li>
 
   <li class="item-has-children">
-  <a href="#0">Reports</a>
+  <a href="#0"><span class="icon-notebook"></span> Reports</a>
   <ul class="sub-menu">
     <li><a href="#0">Weekly</a></li>
     <li><a href="#0">Monthly</a></li>
@@ -19,7 +21,7 @@
   </li>
 
   <li class="item-has-children">
-  <a href="#0">Shopping list</a>
+  <a href="#0"><span class="icon-shopping"></span> Shopping list</a>
   <ul class="sub-menu">
     <li><a href="#0">Create New</a></li>
     <li><a href="#0">List</a></li>
@@ -29,15 +31,13 @@
 </ul>
 
 <ul class="cd-navigation cd-single-item-wrapper">
-  <li><a href="#0">Options</a></li>
-  <li><a href="#0">Push alarm</a></li>
-  <li><a href="#0">Logout</a></li>
+  <li><a href="#0"><span class="icon-options"></span> Options</a></li>
+  <li><a href="#0"><span class="icon-alert"></span> Push alarm</a></li>
+  <li><a href="#0"><span class="icon-user"></span> Logout</a></li>
 </ul>
 
 <div class="cd-navigation socials">
-  <a class="cd-twitter cd-img-replace" href="#0">Twitter</a>
-  <a class="cd-github cd-img-replace" href="#0">Git Hub</a>
-  <a class="cd-facebook cd-img-replace" href="#0">Facebook</a>
-  <a class="cd-google cd-img-replace" href="#0">Google Plus</a>
+  <a class="cd-twitter cd-img-replace" href="#0"><span class="icon-twitter"></span> Twitter</a>
+  <a class="cd-facebook cd-img-replace" href="#0"><span class="icon-facebook"></span> Facebook</a>
 </div>
 </nav>
