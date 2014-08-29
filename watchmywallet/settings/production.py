@@ -108,7 +108,7 @@ PIPELINE_JS = {
         'source_filenames': (
             'js/jquery.min.js',
         ),
-        'output_filename': 'js/jquery.min.compressed.js',
+        'output_filename': 'js/jquery.compressed.min.js',
     },
     'bootstrap': {
         'source_filenames': (
