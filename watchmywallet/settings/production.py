@@ -125,10 +125,12 @@ MIDDLEWARE_CLASSES += (
 )
 PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
 # PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
-STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 STATICFILES_FINDERS += (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'pipeline.finders.PipelineFinder',
     'pipeline.finders.CachedFileFinder',
 )
+STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 PIPELINE_ENABLED = True
 ########## END PIPELINE CONFIGURATION
