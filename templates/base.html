@@ -1,4 +1,3 @@
-{% load staticfiles %}
 {% load compressed %}
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +43,7 @@
       {% block content %}
       {% endblock content %}
 
-    </div> <!-- /container -->
+    </div>
 
     {% compressed_js 'jquery' %}
     {% compressed_js 'bootstrap' %}
