@@ -9,6 +9,11 @@ class TestCategory(TestCase):
         category.name = 'Test category'
         assert(category.name == 'Test category')
 
+    def test_create_hundred_categories(self):
+        for x in xrange():
+            cat = Category.objects.create('Test category '+str(x))
+            assert cat.pk == x
+
 
 
 class TestExpense(TestCase):
